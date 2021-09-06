@@ -1,6 +1,6 @@
 {
   "name": "react-gist-v2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Github Gist React component with CSP support. Forked from react-gist.",
   "main": "lib/index.js",
   "module": "es/index.js",
