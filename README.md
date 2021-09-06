@@ -1,6 +1,6 @@
-# react-gist
+# react-gist-v2
 
-[![NPM](https://nodei.co/npm/react-gist.png)](https://nodei.co/npm/react-gist/)
+[![NPM](https://nodei.co/npm/react-gist.png)](https://nodei.co/npm/react-gist-v2/)
 
 Use this component to add a github gist on your website.
 
@@ -17,7 +17,7 @@ Single-file gist:
 
 ```js
 var React = require('react');
-var Gist = require('react-gist');
+var Gist = require('react-gist-v2');
 
 React.render(
     <Gist id='5104372' />,
@@ -25,13 +25,13 @@ React.render(
 );
 ```
 
-[![Edit react-gist-example-single-file](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/reactgistexamplesinglefile-z9vkc?fontsize=14)
+[![Edit react-gist-v2-example-single-file](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/reactgistexamplesinglefile-z9vkc?fontsize=14)
 
 Multi-file gist:
 
 ```js
 var React = require('react');
-var Gist = require('react-gist');
+var Gist = require('react-gist-v2');
 
 React.render(
     <Gist id='5995ea726914f280afb3' file='Chef-Dockerfile' />,
@@ -39,7 +39,7 @@ React.render(
 );
 ```
 
-[![Edit react-gist-example-multi-file](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/reactgistexamplemultifile-9rw4g?fontsize=14)
+[![Edit react-gist-v2-example-multi-file](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/reactgistexamplemultifile-9rw4g?fontsize=14)
 
 ## Usage
 
@@ -50,4 +50,4 @@ React.render(
 
 ## License
 
-MIT, see [LICENSE.md](http://github.com/tleunen/react-gist/blob/master/LICENSE.md) for details.
+MIT, see [LICENSE.md](http://github.com/tleunen/react-gist-v2/blob/master/LICENSE.md) for details.
