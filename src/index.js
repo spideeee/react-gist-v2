@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class Gist extends React.PureComponent {
   componentDidMount() {
@@ -19,7 +18,7 @@ class Gist extends React.PureComponent {
   }
 
   _updateIframeContent() {
-    const { id, file } = this.props;
+    const { id, file, nonceSHA = "" } = this.props;
 
     const iframe = this.iframeNode;
 
@@ -31,8 +30,15 @@ class Gist extends React.PureComponent {
     const gistScript = `<script type="text/javascript" src="${gistLink}"></script>`;
     const styles = '<style>*{font-size:12px;}</style>';
     const elementId = file ? `gist-${id}-${file}` : `gist-${id}`;
-    const resizeScript = `onload="parent.document.getElementById('${elementId}').style.height=document.body.scrollHeight + 'px'"`;
-    const iframeHtml = `<html><head><base target="_parent">${styles}</head><body ${resizeScript}>${gistScript}</body></html>`;
+    const resizeScript = `
+      <script nonce="${nonceSHA}">
+        function onBodyLoad(){
+          parent.document.getElementById('${elementId}').style.height=document.body.scrollHeight + 'px';
+        }
+        document.body.onload = onBodyLoad;
+      </script>
+    `;
+    const iframeHtml = `<html><head><base target="_parent">${styles}</head><body>${gistScript} ${resizeScript}</body></html>`;
 
     doc.open();
     doc.writeln(iframeHtml);
