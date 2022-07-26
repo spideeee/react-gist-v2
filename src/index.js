@@ -27,7 +27,7 @@ class Gist extends React.PureComponent {
     else if (iframe.contentWindow) doc = iframe.contentWindow.document;
 
     const gistLink = this._defineUrl()
-    const gistScript = `<script type="text/javascript" src="${gistLink}"></script>`;
+    const gistScript = `<script type="text/javascript" src="${gistLink}" nonce="${nonceSHA}"></script>`;
     const styles = '<style>*{font-size:12px;}</style>';
     const elementId = file ? `gist-${id}-${file}` : `gist-${id}`;
     const resizeScript = `
@@ -50,6 +50,7 @@ class Gist extends React.PureComponent {
 
     return (
       <iframe
+        title='gist'
         ref={(n) => { this.iframeNode = n; }}
         width="100%"
         frameBorder={0}
